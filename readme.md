@@ -1,2 +1,2 @@
-##  Data structure and Algorith 
-
+##  Data structure and Algorithm
+[See detail](binary-search/explain.md)

@@ -1,27 +1,75 @@
-const arr = new Array(100000).fill(1).map((_, index)=> index)
-const target = 10000
+const arr = new Array(10).fill(1).map((_, index)=> index + 1)
+const target = 10
+
+/*
+** First Iteration
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+first 0
+last 10
+mid = 0 + 10 / 2 = 5
+
+if target == mid[arr] = fulfill match break
+
+if target > mid[arr] = true
+    first = mid + 1 = 6;
+
+else if target < mid[arr] = true
+    last = mid - 1 = 4;
+    
+    
+** second iteration
+arr = [6, 7, 8, 9, 10] divided for access
+first 6
+last 10
+mid = 6 + 10 / 2 = 8
+
+if target == mid[arr] = fulfill match break
+
+if target > mid[arr] = true
+    first = mid + 1 = 9;
+
+else if target < mid[arr] = true
+    last = mid - 1 = 7;
+
+
+** third iteration
+arr = [9, 10] divided for access
+first 9
+last 10
+mid = 9 + 10 / 2 = 9 (full int)
+
+if target == mid[arr] = fulfill match break [***********]
+
+if target > mid[arr] = true
+    first = mid + 1 = 10;
+
+else if target < mid[arr] = true
+    last = mid - 1 = 8;
+
+
+*/
+
 
 function binary(arr, target) {
     let index = -1
+    let first = 0;
+    let last = arr.length - 1;
 
-    let mid = Math.round(arr.length / 2);
+    let t = 0
+    
+    while (first <= last) {
+        t++
+        let mid = Math.ceil((first + last) / 2);
 
-    while (true) {
-        if (arr[mid] === target) {
-            // console.log("result found index "+mid + " and result "+arr[mid]);
-            index = mid
-            break;
+        if(target === arr[mid]){
+            return mid;
         } else if (target > arr[mid]) {
-            mid = mid + 1
+            first = mid + 1 
         } else if (target < arr[mid]) {
-            mid = mid - 1
-        } else {
-            // console.log("not match");
-            break;
-
-        }
+            last = mid - 1 
+        } 
     }
-
+        
     return index;
 }
 
@@ -29,19 +77,8 @@ function find(arr, target) {
     return arr.indexOf(target)
 }
 
-console.time("binary-search")
-console.log(binary(arr, target));
-console.timeEnd("binary-search")
 
-// 10000
-// binary-search: 10.06ms
-
-
-console.time("arr find")
-console.log(find(arr, target));
-console.timeEnd("arr find")
-// 10000
-// arr find: 0.288ms
-
-
+console.time("start")
+console.log("result:", binary(arr, target));
+console.timeEnd("start")
 
