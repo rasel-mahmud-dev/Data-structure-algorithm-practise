@@ -1,6 +1,6 @@
 # Binary Search
 
-![2022-11-11_190951.jpg](assets/2022-11-11_190951.jpg)
+![](/assets/2022-11-11_190951.jpg)
 
 Binary Search is a searching algorithm for finding an element's position in a sorted array.
 In this algorithm, the element is always searched in the middle of a portion of a sorted array.
