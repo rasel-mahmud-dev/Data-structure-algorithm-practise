@@ -1,5 +1,5 @@
-const arr = new Array(10).fill(1).map((_, index)=> index + 1)
-const target = 10
+const arr = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91] 
+const target = 91
 
 /*
 ** First Iteration
@@ -45,8 +45,6 @@ if target > mid[arr] = true
 
 else if target < mid[arr] = true
     last = mid - 1 = 8;
-
-
 */
 
 
